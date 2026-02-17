@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anila Kryeziu — Content Creator</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&amp;family=Outfit:wght@300;400;500&amp;display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            beige: '#F5F3EF',
+            'beige-dark': '#EBE7E0',
+            charcoal: '#2A2A2A',
+            'charcoal-light': '#4A4A4A',
+            bronze: '#A67C52',
+            'bronze-light': '#C49A6C',
+            cream: '#FDFCFA'
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Outfit', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #A67C52;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .portfolio-item {
+      transition: transform 0.5s ease, opacity 0.3s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: scale(1.02);
+    }
+
+    .stat-number {
+      background: linear-gradient(135deg, #A67C52 0%, #C49A6C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .service-card {
+      transition: all 0.4s ease;
+    }
+
+    .service-card:hover {
+      background: #2A2A2A;
+      color: #F5F3EF;
+    }
+
+    .service-card:hover .service-number {
+      color: #A67C52;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .animate-delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .animate-delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .animate-delay-3 {
+      animation-delay: 0.3s;
+    }
+
+    .animate-delay-4 {
+      animation-delay: 0.4s;
+    }
+  </style>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+  </style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="h-full bg-beige text-charcoal font-sans">
+  <div id="app-wrapper" class="w-full h-full overflow-auto">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-beige/95 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex items-center justify-between h-20"><a href="#hero" class="font-serif text-xl tracking-wide"
+            id="nav-name">AK</a>
+          <div class="hidden md:flex items-center gap-10"><a href="#about"
+              class="nav-link text-sm tracking-widest uppercase text-charcoal-light hover:text-charcoal transition-colors">About</a>
+            <a href="#portfolio"
+              class="nav-link text-sm tracking-widest uppercase text-charcoal-light hover:text-charcoal transition-colors">Portfolio</a>
+            <a href="#services"
+              class="nav-link text-sm tracking-widest uppercase text-charcoal-light hover:text-charcoal transition-colors">Services</a>
+            <a href="#contact"
+              class="nav-link text-sm tracking-widest uppercase text-charcoal-light hover:text-charcoal transition-colors">Contact</a>
+          </div><button id="mobile-menu-btn" class="md:hidden p-2">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+            </svg></button>
+        </div>
+      </div><!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-beige border-t border-beige-dark">
+        <div class="px-6 py-6 space-y-4"><a href="#about"
+            class="block text-sm tracking-widest uppercase text-charcoal-light">About</a> <a href="#portfolio"
+            class="block text-sm tracking-widest uppercase text-charcoal-light">Portfolio</a> <a href="#services"
+            class="block text-sm tracking-widest uppercase text-charcoal-light">Services</a> <a href="#contact"
+            class="block text-sm tracking-widest uppercase text-charcoal-light">Contact</a>
+        </div>
+      </div>
+    </nav><!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8 opacity-0 animate-fade-in">
+            <div class="space-y-2">
+              <p class="text-bronze text-sm tracking-[0.3em] uppercase">Content Creator</p>
+              <h1 id="hero-name" class="font-serif text-6xl lg:text-8xl font-light tracking-tight leading-none">
+                Anila<br>
+                Kryeziu</h1>
+            </div>
+            <p id="hero-title" class="font-serif text-2xl lg:text-3xl text-charcoal-light font-light italic">Visual
+              Storytelling</p>
+            <p id="hero-statement" class="text-charcoal-light leading-relaxed max-w-md text-lg">Crafting compelling
+              visual narratives for automotive and lifestyle brands that demand excellence.</p>
+            <div class="flex items-center gap-8 pt-4"><a href="#portfolio"
+                class="group inline-flex items-center gap-3 text-sm tracking-widest uppercase border-b border-charcoal pb-1 hover:border-bronze hover:text-bronze transition-colors">
+                View Work
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                  viewbox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg></a>
+            </div>
+          </div>
+          <img src="a1.jpg" alt="">
+        </div>
+      </div>
+  </div>
+  </section><!-- About Section -->
+  <section id="about" class="py-32 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-12 gap-16">
+        <div class="lg:col-span-4">
+          <p class="text-bronze text-sm tracking-[0.3em] uppercase mb-4">About</p>
+          <h2 id="about-heading" class="font-serif text-4xl lg:text-5xl font-light">The Studio</h2>
+        </div>
+        <div class="lg:col-span-8 space-y-8">
+          <p id="about-text" class="text-xl lg:text-2xl text-charcoal-light font-light leading-relaxed">With three
+            years of dedicated experience in automotive content creation, I transform brand visions into captivating
+            visual stories that resonate with discerning audiences.</p>
+          <p class="text-charcoal-light leading-relaxed">My approach combines editorial precision with cinematic
+            sensibility, creating content that elevates brands beyond the ordinary. From luxury automotive campaigns
+            to lifestyle brand storytelling, every project is approached with the same commitment to excellence and
+            attention to detail.</p>
+          <div class="grid grid-cols-3 gap-8 pt-8 border-t border-beige-dark">
+            <div>
+              <p class="font-serif text-4xl lg:text-5xl text-charcoal">3+</p>
+              <p class="text-sm tracking-widest uppercase text-charcoal-light mt-2">Years Experience</p>
+            </div>
+            <div>
+              <p class="font-serif text-4xl lg:text-5xl text-charcoal">50+</p>
+              <p class="text-sm tracking-widest uppercase text-charcoal-light mt-2">Brand Projects</p>
+            </div>
+            <div>
+              <p class="font-serif text-4xl lg:text-5xl text-charcoal">15+</p>
+              <p class="text-sm tracking-widest uppercase text-charcoal-light mt-2">Automotive Clients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- Portfolio Section -->
+  <section id="portfolio" class="py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-20">
+        <p class="text-bronze text-sm tracking-[0.3em] uppercase mb-4">Selected Work</p>
+        <h2 class="font-serif text-4xl lg:text-5xl font-light">Portfolio</h2>
+      </div><!-- Portfolio Tabs -->
+      <div class="flex justify-center gap-8 mb-16"><button
+          class="portfolio-tab active text-sm tracking-widest uppercase pb-2 border-b-2 border-charcoal"
+          data-tab="automotive">Automotive</button> <button
+          class="portfolio-tab text-sm tracking-widest uppercase pb-2 border-b-2 border-transparent text-charcoal-light hover:text-charcoal transition-colors"
+          data-tab="shortform">Short-Form Content</button>
+      </div><!-- Automotive Portfolio -->
+      <div id="automotive-portfolio" class="portfolio-content">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="portfolio-item group cursor-pointer">
+            <div class="aspect-[4/3] bg-gradient-to-br from-charcoal/5 to-charcoal/20 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-20 h-20 text-bronze/40" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1">
+                  <rect x="2" y="6" width="20" height="12" rx="2" />
+                  <circle cx="7" cy="18" r="2" />
+                  <circle cx="17" cy="18" r="2" />
+                  <path d="M5 10h14" />
+                </svg>
+              </div>
+              <div
+                class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/80 transition-all duration-500 flex items-center justify-center">
+                <span
+                  class="text-cream opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm tracking-widest uppercase">View
+                  Project</span>
+              </div>
+            </div>
+            <div class="mt-6">
+              <p class="text-bronze text-xs tracking-[0.2em] uppercase mb-2">Luxury SUV Campaign</p>
+              <h3 class="font-serif text-2xl">Range Rover Collaboration</h3>
+            </div>
+          </div>
+          <div class="portfolio-item group cursor-pointer">
+            <div class="aspect-[4/3] bg-gradient-to-br from-bronze/5 to-bronze/20 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-20 h-20 text-charcoal/30" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <div
+                class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/80 transition-all duration-500 flex items-center justify-center">
+                <span
+                  class="text-cream opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm tracking-widest uppercase">View
+                  Project</span>
+              </div>
+            </div>
+            <div class="mt-6">
+              <p class="text-bronze text-xs tracking-[0.2em] uppercase mb-2">Performance Series</p>
+              <h3 class="font-serif text-2xl">Performance</h3>
+            </div>
+          </div>
+          <div class="portfolio-item group cursor-pointer">
+            <div class="aspect-[4/3] bg-gradient-to-br from-beige-dark to-charcoal/10 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-20 h-20 text-bronze/40" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <div
+                class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/80 transition-all duration-500 flex items-center justify-center">
+                <span
+                  class="text-cream opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm tracking-widest uppercase">View
+                  Project</span>
+              </div>
+            </div>
+            <div class="mt-6">
+              <p class="text-bronze text-xs tracking-[0.2em] uppercase mb-2">Heritage Collection</p>
+              <h3 class="font-serif text-2xl">Classic</h3>
+            </div>
+          </div>
+          <div class="portfolio-item group cursor-pointer">
+            <div class="aspect-[4/3] bg-gradient-to-br from-charcoal/10 to-bronze/10 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-20 h-20 text-charcoal/30" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="1">
+                  <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                  <line x1="4" y1="22" x2="4" y2="15" />
+                </svg>
+              </div>
+              <div
+                class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/80 transition-all duration-500 flex items-center justify-center">
+                <span
+                  class="text-cream opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm tracking-widest uppercase">View
+                  Project</span>
+              </div>
+            </div>
+            <div class="mt-6">
+              <p class="text-bronze text-xs tracking-[0.2em] uppercase mb-2">Electric Future</p>
+              <h3 class="font-serif text-2xl">EV</h3>
+            </div>
+          </div>
+        </div>
+      </div><!-- Short-Form Portfolio -->
+      <div id="shortform-portfolio" class="portfolio-content hidden">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="portfolio-item group cursor-pointer">
+            <div class="aspect-[9/16] bg-gradient-to-br from-charcoal/10 to-bronze/10 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-12 h-12 text-bronze/50" viewbox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <p class="text-charcoal text-xs tracking-widest uppercase">Reels • 2.1M Views</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <h3 class="font-serif text-lg">Dawn Drive Series</h3>
+            </div>
+          </div>
+          <div class="portfolio-item group cursor-pointer">
+            <div class="aspect-[9/16] bg-gradient-to-br from-bronze/10 to-charcoal/10 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-12 h-12 text-charcoal/40" viewbox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <p class="text-charcoal text-xs tracking-widest uppercase">TikTok • 850K Views</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <h3 class="font-serif text-lg">Detail Reveals</h3>
+            </div>
+          </div>
+          <div class="portfolio-item group cursor-pointer">
+            <div class="aspect-[9/16] bg-gradient-to-br from-beige-dark to-charcoal/20 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <svg class="w-12 h-12 text-bronze/50" viewbox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+              </div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <p class="text-charcoal text-xs tracking-widest uppercase">Shorts • 1.5M Views</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <h3 class="font-serif text-lg">Behind The Lens</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- Services Section -->
+  <section id="services" class="py-32 bg-charcoal text-beige">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-20">
+        <p class="text-bronze text-sm tracking-[0.3em] uppercase mb-4">Expertise</p>
+        <h2 class="font-serif text-4xl lg:text-5xl font-light">Services</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="service-card bg-charcoal-light/30 p-8 border border-charcoal-light/20 group"><span
+            class="service-number font-serif text-5xl text-beige/20 group-hover:text-bronze transition-colors">01</span>
+          <h3 class="font-serif text-2xl mt-6 mb-4">UGC Creation</h3>
+          <p class="text-beige/70 text-sm leading-relaxed">Authentic, high-quality user-generated content that
+            connects brands with their audience.</p>
+        </div>
+        <div class="service-card bg-charcoal-light/30 p-8 border border-charcoal-light/20 group"><span
+            class="service-number font-serif text-5xl text-beige/20 group-hover:text-bronze transition-colors">02</span>
+          <h3 class="font-serif text-2xl mt-6 mb-4">Video Editing</h3>
+          <p class="text-beige/70 text-sm leading-relaxed">Cinematic post-production that transforms raw footage into
+            compelling visual narratives.</p>
+        </div>
+        <div class="service-card bg-charcoal-light/30 p-8 border border-charcoal-light/20 group"><span
+            class="service-number font-serif text-5xl text-beige/20 group-hover:text-bronze transition-colors">03</span>
+          <h3 class="font-serif text-2xl mt-6 mb-4">Creative Direction</h3>
+          <p class="text-beige/70 text-sm leading-relaxed">Strategic visual leadership from concept to execution,
+            ensuring brand consistency.</p>
+        </div>
+        <div class="service-card bg-charcoal-light/30 p-8 border border-charcoal-light/20 group"><span
+            class="service-number font-serif text-5xl text-beige/20 group-hover:text-bronze transition-colors">04</span>
+          <h3 class="font-serif text-2xl mt-6 mb-4">Social Strategy</h3>
+          <p class="text-beige/70 text-sm leading-relaxed">Data-driven content strategies that build engaged
+            communities and drive results.</p>
+        </div>
+      </div>
+    </div>
+  </section><!-- Results Section -->
+  <section id="results" class="py-32 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="text-center mb-20">
+        <p class="text-bronze text-sm tracking-[0.3em] uppercase mb-4">Impact</p>
+        <h2 class="font-serif text-4xl lg:text-5xl font-light">Results &amp; Analytics</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div class="space-y-2">
+          <p class="stat-number font-serif text-6xl lg:text-7xl font-light">15M+</p>
+          <p class="text-sm tracking-widest uppercase text-charcoal-light">Total Views</p>
+        </div>
+        <div class="space-y-2">
+          <p class="stat-number font-serif text-6xl lg:text-7xl font-light">8.5%</p>
+          <p class="text-sm tracking-widest uppercase text-charcoal-light">Avg. Engagement</p>
+        </div>
+        <div class="space-y-2">
+          <p class="stat-number font-serif text-6xl lg:text-7xl font-light">500K+</p>
+          <p class="text-sm tracking-widest uppercase text-charcoal-light">Community Reach</p>
+        </div>
+        <div class="space-y-2">
+          <p class="stat-number font-serif text-6xl lg:text-7xl font-light">200+</p>
+          <p class="text-sm tracking-widest uppercase text-charcoal-light">Content Pieces</p>
+        </div>
+      </div>
+      <div class="mt-20 grid md:grid-cols-3 gap-8">
+        <div class="bg-beige p-8 text-center">
+          <svg class="w-8 h-8 mx-auto mb-4 text-bronze" viewbox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="18" cy="6" r="1.5" fill="currentColor" />
+          </svg>
+          <p class="font-serif text-3xl mb-2">125K</p>
+          <p class="text-xs tracking-widest uppercase text-charcoal-light">Instagram</p>
+        </div>
+        <div class="bg-beige p-8 text-center">
+          <svg class="w-8 h-8 mx-auto mb-4 text-bronze" viewbox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+          </svg>
+          <p class="font-serif text-3xl mb-2">280K</p>
+          <p class="text-xs tracking-widest uppercase text-charcoal-light">TikTok</p>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- Contact Section -->
+  <section id="contact" class="py-32">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8">
+          <p class="text-bronze text-sm tracking-[0.3em] uppercase">Get In Touch</p>
+          <h2 class="font-serif text-4xl lg:text-6xl font-light">Let's Create<br>
+            Something<br>
+            Exceptional</h2>
+          <p class="text-charcoal-light leading-relaxed max-w-md">Ready to elevate your brand's visual presence? I'd
+            love to discuss how we can work together.</p>
+        </div>
+        <div class="space-y-8">
+          <div class="border-b border-beige-dark pb-6">
+            <p class="text-xs tracking-widest uppercase text-charcoal-light mb-2">Email</p><a id="contact-email"
+              href="mailto:hello@anilakryeziu.com"
+              class="font-serif text-2xl lg:text-3xl hover:text-bronze transition-colors">hello@anilakryeziu.com</a>
+          </div>
+          <div class="border-b border-beige-dark pb-6">
+            <p class="text-xs tracking-widest uppercase text-charcoal-light mb-2">Social</p>
+            <div class="flex gap-6 mt-4"><a href="#" target="_blank" rel="noopener noreferrer"
+                class="group flex items-center gap-2 text-charcoal-light hover:text-bronze transition-colors">
+                <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" fill="none" stroke="#F5F3EF" stroke-width="2" />
+                  <circle cx="18" cy="6" r="1.5" />
+                </svg><span class="text-sm tracking-wider">Instagram</span> </a> <a href="#" target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center gap-2 text-charcoal-light hover:text-bronze transition-colors">
+                <svg class="w-5 h-5" viewbox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                </svg><span class="text-sm tracking-wider">TikTok</span> </a>
+              <div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+  </section><!-- Footer -->
+  <footer class="py-12 border-t border-beige-dark">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="font-serif text-lg">Anila Kryeziu</p>
+        <p class="text-sm text-charcoal-light">© 2026 All Rights Reserved</p><a href="#hero"
+          class="text-sm tracking-widest uppercase text-charcoal-light hover:text-bronze transition-colors">Back to
+          Top</a>
+      </div>
+    </div>
+  </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      hero_name: 'Anila Kryeziu',
+      hero_title: 'Visual Storytelling',
+      hero_statement: 'Crafting compelling visual narratives for automotive and lifestyle brands that demand excellence.',
+      about_heading: 'The Studio',
+      about_text: 'With three years of dedicated experience in automotive content creation, I transform brand visions into captivating visual stories that resonate with discerning audiences.',
+      contact_email: 'anilakryeziu06@gmail.com',
+      background_color: '#F5F3EF',
+      text_color: '#2A2A2A',
+      accent_color: '#A67C52',
+      secondary_surface_color: '#FDFCFA',
+      secondary_text_color: '#4A4A4A',
+      font_family: 'Cormorant Garamond',
+      font_size: 16
+    };
+
+    let config = { ...defaultConfig };
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking links
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+
+    // Portfolio tab switching
+    document.querySelectorAll('.portfolio-tab').forEach(tab => {
+      tab.addEventListener('click', function () {
+        document.querySelectorAll('.portfolio-tab').forEach(t => {
+          t.classList.remove('border-charcoal');
+          t.classList.add('border-transparent', 'text-charcoal-light');
+        });
+        this.classList.add('border-charcoal');
+        this.classList.remove('border-transparent', 'text-charcoal-light');
+
+        const tabName = this.getAttribute('data-tab');
+        document.querySelectorAll('.portfolio-content').forEach(content => {
+          content.classList.add('hidden');
+        });
+        document.getElementById(tabName + '-portfolio').classList.remove('hidden');
+      });
+    });
+
+    async function onConfigChange(cfg) {
+      config = { ...defaultConfig, ...cfg };
+
+      // Update hero section
+      const heroName = document.getElementById('hero-name');
+      if (heroName) {
+        const names = (config.hero_name || defaultConfig.hero_name).split(' ');
+        heroName.innerHTML = names.length > 1 ? `${names[0]}<br/>${names.slice(1).join(' ')}` : names[0];
+      }
+
+      const heroTitle = document.getElementById('hero-title');
+      if (heroTitle) heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
+
+      const heroStatement = document.getElementById('hero-statement');
+      if (heroStatement) heroStatement.textContent = config.hero_statement || defaultConfig.hero_statement;
+
+      // Update about section
+      const aboutHeading = document.getElementById('about-heading');
+      if (aboutHeading) aboutHeading.textContent = config.about_heading || defaultConfig.about_heading;
+
+      const aboutText = document.getElementById('about-text');
+      if (aboutText) aboutText.textContent = config.about_text || defaultConfig.about_text;
+
+      // Update contact section
+      const contactEmail = document.getElementById('contact-email');
+      if (contactEmail) {
+        const email = config.contact_email || defaultConfig.contact_email;
+        contactEmail.textContent = email;
+        contactEmail.href = `mailto:${email}`;
+      }
+
+      // Apply colors
+      const bgColor = config.background_color || defaultConfig.background_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+      const surfaceColor = config.secondary_surface_color || defaultConfig.secondary_surface_color;
+      const secondaryText = config.secondary_text_color || defaultConfig.secondary_text_color;
+
+      document.documentElement.style.setProperty('--bg-color', bgColor);
+      document.body.style.backgroundColor = bgColor;
+      document.body.style.color = textColor;
+
+      // Apply font
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const baseFontStack = 'Georgia, serif';
+      document.querySelectorAll('.font-serif').forEach(el => {
+        el.style.fontFamily = `${fontFamily}, ${baseFontStack}`;
+      });
+
+      // Apply font size scaling
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.body.style.fontSize = `${baseSize}px`;
+    }
+
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => cfg.secondary_surface_color || defaultConfig.secondary_surface_color,
+            set: (value) => {
+              config.secondary_surface_color = value;
+              window.elementSdk.setConfig({ secondary_surface_color: value });
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => cfg.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => cfg.secondary_text_color || defaultConfig.secondary_text_color,
+            set: (value) => {
+              config.secondary_text_color = value;
+              window.elementSdk.setConfig({ secondary_text_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => cfg.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['hero_name', cfg.hero_name || defaultConfig.hero_name],
+        ['hero_title', cfg.hero_title || defaultConfig.hero_title],
+        ['hero_statement', cfg.hero_statement || defaultConfig.hero_statement],
+        ['about_heading', cfg.about_heading || defaultConfig.about_heading],
+        ['about_text', cfg.about_text || defaultConfig.about_text],
+        ['contact_email', cfg.contact_email || defaultConfig.contact_email]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    } else {
+      onConfigChange(defaultConfig);
+    }
+  </script>
+  <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9ced9c5ae5a9d100',t:'MTc3MTI1MDg0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
